@@ -1,0 +1,38 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+  .row{
+    height: 48vh;
+    width: 38vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/assets/img/ithutengTutoringProgram.png') ;
+    background-repeat: no-repeat ;
+    background-size: contain;
+
+    p{
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+      font-weight: 100;
+      opacity: 80%;
+      text-transform: uppercase;
+      font-size: smaller;
+      letter-spacing: 1.5px;
+      padding-left: 30px;
+    }
+
+    img{
+      margin-top: -35px;
+      margin-bottom: 10px;
+    }
+
+
+  }
+
+
+
+}
+

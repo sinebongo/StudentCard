@@ -1,0 +1,17 @@
+.container{
+  display: flex;
+  height: 80vh;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+  .btn{
+    transition: ease-in-out 0.5s;
+    box-shadow: 5px 5px 5px rgb(46, 45, 45);
+  }
+
+  .btn:hover{
+    transform: scale(1.2);
+    box-shadow: 10px 10px 10px black;
+  }
+}
+
+
