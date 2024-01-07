@@ -4,9 +4,9 @@
       <img [src]="output?.base64" alt="" height="120" width="120"  class=" rounded-circle " >
       <input *ngIf="output == undefined" type="file" name="" class="text-danger" (change)="onFileChange($event)" >
       <br>
-      <p class="  m-0 mt-3 ">Name : {{name}}</p>
+      <p class="  m-0 mt-3 pt-3">Name : {{name}}</p>
       <p class="  m-0"  >Sur : {{surname}}</p>
-      <p class="  mb-5">Grade : {{grade}}</p>
+      <p >Grade : {{grade}}</p>
     </div>
     <div class="col col-4 qrcode" >
       <qrcode [qrdata]="link" [alt]="'qrcode'" [width]="160" [allowEmptyString]="false"   ></qrcode>
