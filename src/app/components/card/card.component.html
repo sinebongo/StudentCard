@@ -1,14 +1,14 @@
 <div class="container contents"  >
   <div class="row"   #contents  >
-    <div class="col col-6  col-xm-12">
+    <div class="col col-8">
       <img [src]="output?.base64" alt="" height="120" width="120"  class=" rounded-circle " >
       <input *ngIf="output == undefined" type="file" name="" class="text-danger" (change)="onFileChange($event)" >
       <br>
-      <p class=" text-light m-0 mt-3 ">Name : {{name}}</p>
-      <p class=" text-light m-0"  >Sur : {{surname}}</p>
-      <p class=" text-light mb-5">Grade : {{grade}}</p>
+      <p class="  m-0 mt-3 ">Name : {{name}}</p>
+      <p class="  m-0"  >Sur : {{surname}}</p>
+      <p class="  mb-5">Grade : {{grade}}</p>
     </div>
-    <div class="col col-6 qrcode" >
+    <div class="col col-4 qrcode" >
       <qrcode [qrdata]="link" [alt]="'qrcode'" [width]="160" [allowEmptyString]="false"   ></qrcode>
     </div>
 
