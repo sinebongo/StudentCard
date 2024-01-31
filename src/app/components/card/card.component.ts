@@ -19,6 +19,7 @@ export class CardComponent implements OnInit {
   name: string;
   surname : string;
   grade: string;
+  studentNo : string;
   link: string;
 
   output? : NgxCroppedEvent
@@ -28,6 +29,7 @@ export class CardComponent implements OnInit {
       this.name = param['name'];
       this.surname = param['surname'],
       this.grade= param['grade'];
+      this.studentNo = param['studentNo'];
       this.link = param['link'].toString().replace('viewform','formResponse').concat('&submit=Submit')
     });
 

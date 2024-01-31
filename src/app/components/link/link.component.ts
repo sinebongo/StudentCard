@@ -22,6 +22,7 @@ export class LinkComponent {
   FirstName : string ='no name';
   LastName : string='no Surname';
   Grade : string ='';
+  StudentNo : string = '';
 
   saveData(form : NgForm){
     this.Link = new URL(form.value.link)
@@ -30,8 +31,8 @@ export class LinkComponent {
     this.FirstName = this.myLinkParam.get('entry.396603015')
     this.LastName = this.myLinkParam.get('entry.649425521')
     this.Grade = this.myLinkParam.get('entry.1507274521')
-    //console.log(this.Link)
+    this.StudentNo = this.myLinkParam.get('entry.585689432')
 
-    this.router.navigate(['card'], {queryParams: {name : this.FirstName, surname : this.LastName, grade: this.Grade, link: this.Link}})
+    this.router.navigate(['card'], {queryParams: {name : this.FirstName, surname : this.LastName, grade: this.Grade, studentNo: this.StudentNo, link: this.Link}})
 }
 }
