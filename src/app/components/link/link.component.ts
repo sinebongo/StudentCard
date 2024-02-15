@@ -35,4 +35,10 @@ export class LinkComponent {
 
     this.router.navigate(['card'], {queryParams: {name : this.FirstName, surname : this.LastName, grade: this.Grade, studentNo: this.StudentNo, link: this.Link}})
 }
+
+Exit(){
+  const ok =window.confirm('Are you sure you want to exit? The data you have wont be saved');
+  if(ok){
+    this.router.navigate(['/Home'])}
+}
 }

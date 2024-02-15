@@ -21,6 +21,7 @@ export class CardComponent implements OnInit {
   grade: string;
   studentNo : string;
   link: string;
+  url = "https://docs.google.com/forms/d/1m3hZp4VOTL-cCdARU72_67c8bwV2G2twCeDHzhuS0IQ/prefill"
 
   output? : NgxCroppedEvent
 
@@ -42,7 +43,6 @@ export class CardComponent implements OnInit {
       a.download =  `${this.name}.png`;
       a.click();
     })
-    this.route.navigate(['Home'])
   }
 
   onFileChange($event : any){
@@ -51,5 +51,9 @@ export class CardComponent implements OnInit {
     })
   }
 
-
-}
+  BackTohome(){
+    const ok =window.confirm('Are you sure you want to exit? The data you have wont be saved');
+    if(ok){
+      this.route.navigate(['/Home'])}
+  }
+}``
