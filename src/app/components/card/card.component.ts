@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { NgxCroppedEvent, NgxPhotoEditorService } from 'ngx-photo-editor';
@@ -11,7 +11,7 @@ import { NgxCroppedEvent, NgxPhotoEditorService } from 'ngx-photo-editor';
 })
 export class CardComponent implements OnInit {
 
-  constructor(private router : ActivatedRoute, private pservice : NgxPhotoEditorService){
+  constructor(private router : ActivatedRoute, private pservice : NgxPhotoEditorService, private route : Router){
   }
 
   @ViewChild('contents', {static:true}) el! : ElementRef<HTMLImageElement>
@@ -41,9 +41,8 @@ export class CardComponent implements OnInit {
       a.href = canvas.toDataURL('image/jpeg')
       a.download =  `${this.name}.png`;
       a.click();
-
-
     })
+    this.route.navigate(['Home'])
   }
 
   onFileChange($event : any){
