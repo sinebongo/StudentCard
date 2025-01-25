@@ -2,7 +2,6 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import { NgxCroppedEvent, NgxPhotoEditorService } from 'ngx-photo-editor';
 
 @Component({
   selector: 'app-card',
@@ -12,7 +11,6 @@ import { NgxCroppedEvent, NgxPhotoEditorService } from 'ngx-photo-editor';
 export class CardComponent implements OnInit {
   constructor(
     private router: ActivatedRoute,
-    private pservice: NgxPhotoEditorService,
     private route: Router
   ) {}
 
@@ -24,7 +22,6 @@ export class CardComponent implements OnInit {
   studentNo: string;
   link: string;
 
-  output?: NgxCroppedEvent;
 
   // Define your allowed geofence location
   GEO_CENTER = { lat: -25.746, lng: 28.229 }; // Example: Pretoria, South Africa
@@ -59,13 +56,6 @@ export class CardComponent implements OnInit {
     });
   }
 
-  onFileChange($event: any) {
-    this.pservice
-      .open($event, { aspectRatio: 4 / 3, autoCropArea: 1 })
-      .subscribe((data) => {
-        this.output = data;
-      });
-  }
 
   BackTohome() {
     const ok = window.confirm(

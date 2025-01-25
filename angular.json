@@ -31,8 +31,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/ngx-photo-editor/photo-editor.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
 
             ],
             "scripts": []
@@ -42,8 +41,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                   "maximumWarning": "1.20mb",
+                    "maximumError": "1.50mb"
                 },
                 {
                   "type": "anyComponentStyle",
