@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { ErrorComponent } from './components/error/error.component';
+import { CardValidationComponent } from './components/card-validation/card-validation.component';
 
 
 
@@ -17,6 +18,7 @@ import { ErrorComponent } from './components/error/error.component';
     GFormComponent,
     CardComponent,
     ErrorComponent,
+    CardValidationComponent,
 
   ],
   imports: [

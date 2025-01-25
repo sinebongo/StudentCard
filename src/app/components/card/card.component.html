@@ -1,25 +1,15 @@
 <div class="container contents">
   <div class="row" #contents>
     <div class="col col-8">
-      <img
-        src="./assets/img/ITP.jpg"
-        alt=""
-        height="120"
-        width="120"
-        class="rounded-circle"
-      />
-      <br />
-      <p class="m-0 mt-3 pt-3">Name : {{ name }}</p>
-      <p class="m-0">Surname : {{ surname }}</p>
-      <p>Grade : {{ grade }}</p>
+      <img src="./assets/img/ITP.jpg" alt="" height="120" width="120" class="rounded-circle">
+      <br>
+      <p class="m-0 mt-3 pt-3">Name: {{ name }}</p>
+      <p class="m-0">Surname: {{ surname }}</p>
+      <p>Grade: {{ grade }}</p>
     </div>
     <div class="col col-4 qrcode">
-      <qrcode
-        [qrdata]="link"
-        [alt]="'qrcode'"
-        [width]="160"
-        [allowEmptyString]="false"
-      ></qrcode>
+      <!-- QR Code displaying the link to CardValidationComponent -->
+      <qrcode [qrdata]="link" [alt]="'qrcode'" [width]="160" [allowEmptyString]="false"></qrcode>
     </div>
   </div>
 </div>
@@ -27,9 +17,4 @@
 <div class="btn-container">
   <button class="btn btn-md btn-primary" (click)="ExportToPdf()">Export</button>
   <button class="btn btn-md btn-primary" (click)="BackTohome()">Done</button>
-</div>
-
-<!-- Geofencing Validation -->
-<div *ngIf="locationMessage" class="location-message">
-  <p>{{ locationMessage }}</p>
 </div>
