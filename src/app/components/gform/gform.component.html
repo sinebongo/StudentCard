@@ -1,8 +1,33 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <a class="btn btn-primary btn-lg mx-2"  type="button" (click)="redirect()">Prefill Form</a>
-
+<div class="form-container">
+  <h2>Attendance Register</h2>
+  <form (ngSubmit)="onSubmit()" #attendanceForm="ngForm">
+    <div>
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" [(ngModel)]="FirstName" required #firstName="ngModel" />
+      <div *ngIf="attendanceForm.submitted || firstName?.touched">
+        <div *ngIf="firstName?.errors?.['required']" class="error-message">First Name is required.</div>
+      </div>
     </div>
-  </div>
+
+    <div>
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" [(ngModel)]="LastName" required #lastName="ngModel" />
+      <div *ngIf="attendanceForm.submitted || lastName?.touched">
+        <div *ngIf="lastName?.errors?.['required']" class="error-message">Last Name is required.</div>
+      </div>
+    </div>
+
+    <div>
+      <label for="grade">Grade</label>
+      <select id="grade" name="grade" [(ngModel)]="Grade" required #grade="ngModel">
+        <option value="" disabled selected>Select Grade</option>
+        <option *ngFor="let grade of grades" [value]="grade">{{ grade }}</option>
+      </select>
+      <div *ngIf="attendanceForm.submitted || grade?.touched">
+        <div *ngIf="grade?.errors?.['required']" class="error-message">Grade is required.</div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!attendanceForm.valid">Submit</button>
+  </form>
 </div>

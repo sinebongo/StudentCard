@@ -1,23 +1,35 @@
-<div class="container contents"  >
-  <div class="row"   #contents  >
+<div class="container contents">
+  <div class="row" #contents>
     <div class="col col-8">
-      <img [src]="output?.base64" alt="" height="120" width="120"  class=" rounded-circle " >
-      <input *ngIf="output == undefined" type="file" name="" class="text-danger" (change)="onFileChange($event)" >
-      <br>
-      <p class="  m-0 mt-3 pt-3">Name : {{name}}</p>
-      <p class="  m-0"  >Sur : {{surname}}</p>
-      <p >Grade : {{grade}}</p>
-      <p>Student No. : {{studentNo}}</p>
+      <img
+        src="./assets/img/ITP.jpg"
+        alt=""
+        height="120"
+        width="120"
+        class="rounded-circle"
+      />
+      <br />
+      <p class="m-0 mt-3 pt-3">Name : {{ name }}</p>
+      <p class="m-0">Surname : {{ surname }}</p>
+      <p>Grade : {{ grade }}</p>
     </div>
-    <div class="col col-4 qrcode" >
-      <qrcode [qrdata]="link" [alt]="'qrcode'" [width]="160" [allowEmptyString]="false"   ></qrcode>
+    <div class="col col-4 qrcode">
+      <qrcode
+        [qrdata]="link"
+        [alt]="'qrcode'"
+        [width]="160"
+        [allowEmptyString]="false"
+      ></qrcode>
     </div>
-
   </div>
 </div>
+
 <div class="btn-container">
   <button class="btn btn-md btn-primary" (click)="ExportToPdf()">Export</button>
   <button class="btn btn-md btn-primary" (click)="BackTohome()">Done</button>
 </div>
 
-
+<!-- Geofencing Validation -->
+<div *ngIf="locationMessage" class="location-message">
+  <p>{{ locationMessage }}</p>
+</div>
